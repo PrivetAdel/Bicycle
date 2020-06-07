@@ -1,0 +1,48 @@
+.site-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "about work . shop contact";
+  grid-gap: 20px;
+  align-content: center;
+}
+
+.site-list__item {
+  justify-self: center;
+
+  &--about-us {
+    grid-area: about;
+  }
+  &--work {
+    grid-area: work;
+  }
+  &--shop {
+    grid-area: shop;
+  }
+  &--contact {
+    grid-area: contact;
+  }
+}
+
+.site-list__link {
+  color: $color-dark-grey;
+  text-transform: uppercase;
+  font-weight: $bold;
+  transition: .3s all;
+
+  &:hover {
+    color: $color-green;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 568px) {
+  .site-list {
+    grid-template-columns: repeat(3, minmax(35px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "about . contact"
+                         "work . shop";
+  }
+}

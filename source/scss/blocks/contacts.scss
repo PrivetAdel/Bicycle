@@ -1,0 +1,96 @@
+.contacts {
+  display: grid;
+  grid-template-rows: minmax(50px, auto) minmax(230px, auto) minmax(50px, auto);
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  min-height: 470px;
+  max-height: 570px;
+}
+
+.contacts__wrap {
+  grid-row: 2 / 3;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  min-width: 33.3%;
+
+  span {
+    font-size: 24px;
+    line-height: 34px;
+    font-style: italic;
+    margin: 8% 0;
+  }
+}
+
+.contacts__form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contacts__email {
+  border: 1px solid $color-light-grey;
+  font-size: 20px;
+  line-height: 24px;
+  font-style: italic;
+  color: $color-dark-grey;
+  width: 74%;
+  padding: 22px 30px;
+
+  &::-webkit-input-placeholder {color:$color-light-grey;}
+  &::-moz-placeholder          {color:$color-light-grey;}
+  &:-moz-placeholder           {color:$color-light-grey;}
+  &:-ms-input-placeholder      {color:$color-light-grey;}
+}
+
+.contacts__button {
+  border: none;
+  background-color: $color-green;
+  color: $color-white;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: $lighter;
+  width: 24%;
+  transition: .3s all;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: $tablet-width-M) {
+  .contacts__email {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 17px 25px;
+  }
+
+  .contacts__button {
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: $tablet-width-S) {
+  .contacts__wrap {
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .contacts__email {
+    font-size: 17px;
+    line-height: 20px;
+    padding: 15px 20px;
+  }
+
+  .contacts__button {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}

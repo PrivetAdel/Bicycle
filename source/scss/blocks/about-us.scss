@@ -1,0 +1,30 @@
+.about-us {
+  background-color: $color-bg-lite-grey;
+  display: grid;
+  grid-template-rows: minmax(50px, auto) minmax(230px, auto) minmax(50px, auto);
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  min-height: 470px;
+  max-height: 570px;
+}
+
+.about-us__content {
+  grid-row: 2 / 3;
+  max-width: 80%;
+  max-height: 470px;
+}
+
+.about-us__title {
+  color: $color-dark-grey;
+}
+
+@media (max-width: $mobile-width-M) {
+  .about-us {
+    max-height: 670px;
+  }
+
+  .about-us__content {
+    max-height: 570px;
+  }
+}
