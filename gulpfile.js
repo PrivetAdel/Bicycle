@@ -13,8 +13,8 @@ const svgstore = require('gulp-svgstore');
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 const del = require('del');
-// const ghPages = require('gh-pages');
-// const path = require('path');
+const ghPages = require('gh-pages');
+const path = require('path');
 
 gulp.task("css", function () {
   return gulp.src("source/scss/styles.scss")

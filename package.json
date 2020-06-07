@@ -25,6 +25,7 @@
     "posthtml-include": "^1.4.3"
   },
   "devDependencies": {
+    "gh-pages": "^3.0.0",
     "gulp-imagemin": "^7.1.0"
   }
 }
