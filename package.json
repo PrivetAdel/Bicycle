@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    "start": "gulp start"
-  },
   "author": "PrivetAdel",
   "license": "ISC",
   "dependencies": {
@@ -28,5 +24,27 @@
   "devDependencies": {
     "gh-pages": "^3.0.0",
     "gulp-imagemin": "^7.1.0"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp start"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/scss/**/*.scss"
+  ],
+  "engines": {
+    "node": "8.15"
   }
 }
