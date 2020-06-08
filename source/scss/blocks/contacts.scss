@@ -37,6 +37,8 @@
   color: $color-dark-grey;
   width: 74%;
   padding: 22px 30px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 
   &::-webkit-input-placeholder {color:$color-light-grey;}
   &::-moz-placeholder          {color:$color-light-grey;}
@@ -53,6 +55,9 @@
   font-weight: $lighter;
   width: 24%;
   transition: .3s all;
+  padding: 22px 10px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 
   &:hover {
     opacity: .6;
