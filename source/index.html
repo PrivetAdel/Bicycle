@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.min.css">
   <title>Document</title>
 </head>
 <body>
@@ -18,9 +18,7 @@
     <section class="page-header">
       <nav class="main-nav">
         <a class="main-nav__link" href="#">
-          <svg class="main-nav__icon" width="95" height="85">
-            <use xlink:href="#icon-main-logo"></use>
-          </svg>
+          <img src="img/icon-main-logo.svg" class="main-nav__icon" width="95" height="85">
         </a>
         <ul class="main-nav__list site-list">
           <li class="site-list__item site-list__item--about-us">
@@ -201,9 +199,9 @@
     </section>
     <section class="contacts" id="contact">
       <div class="contacts__wrap">
-        <svg class="main-nav__icon" width="95" height="85">
-          <use xlink:href="#icon-main-logo"></use>
-        </svg>
+        <a class="main-nav__icon" href="#">
+          <img src="img/icon-main-logo.svg" class="main-nav__icon" width="95" height="85">
+        </a>
         <span>Stay on the saddle!</span>
         <form class="contacts__form" action="https://formspree.io/xbjzobgj" method="post">
           <input class="contacts__email" type="email" name="email" placeholder="enter your email..." required>
@@ -246,6 +244,6 @@
       </div>
     </section>
   </footer>
-  <script src="js/slider.js"></script>
+  <script src="js/slider.min.js"></script>
 </body>
 </html>

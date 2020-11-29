@@ -13,8 +13,16 @@ const svgstore = require('gulp-svgstore');
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 const del = require('del');
+const uglify = require('gulp-uglify-es').default;
 const ghPages = require('gh-pages');
 const path = require('path');
+
+gulp.task("compress", function () {
+  return gulp.src("source/js/*.js")
+    .pipe(uglify())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest("build/js"))
+});
 
 gulp.task("css", function () {
   return gulp.src("source/scss/styles.scss")
@@ -25,6 +33,7 @@ gulp.task("css", function () {
       autoprefixer()
     ]))
     .pipe(csso())
+    .pipe(rename("styles.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"));
 });
@@ -50,7 +59,7 @@ gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
+      imagemin.mozjpeg({progressive: true}),
       imagemin.svgo()
     ]))
     .pipe(gulp.dest("source/img"));
@@ -60,12 +69,6 @@ function deploy(cb) {
   ghPages.publish(path.join(process.cwd(), "./build"), cb);
 }
 exports.deploy = deploy;
-
-gulp.task("webp", function () {
-  return gulp.src("source/img/**/*.{png,jpg}")
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("source/img"));
-});
 
 gulp.task("server", function () {
   server.init({
@@ -97,6 +100,7 @@ gulp.task("clean", function () {
 
 gulp.task("build", gulp.series(
   "clean",
+  "compress",
   "copy",
   "css",
   "sprite",
