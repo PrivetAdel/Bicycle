@@ -1,4 +1,4 @@
-# [Bicycle](https://privetadel.github.io/Bicycle/) --- интернет-магазин ретро велосипедов
+# [Bicycle](https://privetadel.github.io/Bicycle/) — интернет-магазин ретро велосипедов
 
 - Grid
 - Gulp & SCSS
